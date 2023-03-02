@@ -18,13 +18,7 @@ public:
             m=l+(r-l)/2;
             if (guess(m) == 0) return m;
             
-            if (guess(m) == -1) {
-                cout << "here";
-                r = m - 1;
-            }
-            else {
-                l = m + 1;
-            }
+            (guess(m) > 0) ? l = m + 1 : r = m -1;
         }
         return l;
     }
