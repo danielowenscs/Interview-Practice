@@ -4,16 +4,13 @@
 class Solution {
 public:
     int firstBadVersion(int n) {
-        int min = 1;
-        int max = n;
-        int guess;
-        
-        while (!isBadVersion(min)) {
-           guess = min +(max-min)/2;
-            cout << guess;
-           isBadVersion(guess) ?  max = guess - 1: min = guess + 1;
+        int l = 1;
+        int r = n;
+        while (!isBadVersion(l)) {
+           int m = l +(r-l)/2;
+           isBadVersion(m) ?  r = m - 1: l = m + 1;
         }
-        return min;
+        return l;
     }
 };
 
