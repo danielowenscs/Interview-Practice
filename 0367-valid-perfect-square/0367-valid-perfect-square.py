@@ -9,7 +9,7 @@ class Solution(object):
         while(l <= r):
             m = (l + r) //2
             print(m, l, r)
-            if (num / m == m and num % m == 0):
+            if (m * m == num):
                 return True
             if (m > num / m):
                 r = m -1
