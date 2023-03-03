@@ -8,7 +8,6 @@ class Solution(object):
         r = num
         while(l <= r):
             m = (l + r)/2
-            print(m, l, r)
             if (m * m == num):
                 return True
             if (m > num / m):
