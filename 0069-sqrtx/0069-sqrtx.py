@@ -8,8 +8,8 @@ class Solution(object):
         r = x
         while(l <= r):
             m = (l + r) //2
-            if (x / m == m):
-                return m
+            # if (x / m == m):
+            #     return m
             if (m > x / m):
                 r = m -1
             else:
