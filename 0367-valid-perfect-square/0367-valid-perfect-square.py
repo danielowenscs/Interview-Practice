@@ -7,7 +7,7 @@ class Solution(object):
         l = 1
         r = num
         while(l <= r):
-            m = (l + r) //2
+            m = (l + r)/2
             print(m, l, r)
             if (m * m == num):
                 return True
