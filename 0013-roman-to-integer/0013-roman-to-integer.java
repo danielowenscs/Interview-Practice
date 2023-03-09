@@ -23,7 +23,6 @@ class Solution {
                 sum += ((dict.get(next)-dict.get(curr)));
                 dict.replace(next, 0);
             }
-            System.out.println("curr: " + curr + " " + "next: "+ next + " " + sum + " " + dict.toString());
         }
         sum += dict.get(s.charAt(s.length()-1));
         
