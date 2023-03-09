@@ -16,7 +16,6 @@ class Solution(object):
                 return False
             else:
                 stack = stack[:-1]
-
         return (len(stack) == 0)
     
     
