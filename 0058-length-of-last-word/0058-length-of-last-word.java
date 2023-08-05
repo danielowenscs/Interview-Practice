@@ -6,13 +6,11 @@ class Solution {
         int end = s.length();
         
         for (int i = s.length()-1; i>= 0; i--){
-           System.out.println("i " + i + " | " + "start : " + start + " | " + "end : " + end + " | " + "in word : " + inWord);
             if (s.charAt(i) != ' ' && !inWord) {
                 inWord = true;
                 end = i+1;
             }
             else if (s.charAt(i) == ' ' && inWord) {
-                 //System.out.println(i);
                 start = i+1;
                 
                 break;
