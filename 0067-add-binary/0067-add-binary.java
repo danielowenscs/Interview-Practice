@@ -16,7 +16,6 @@ class Solution {
             }
         }
         
-        System.out.println(a + " | " +  b);
         String result = "";
         boolean carry = false;
         for (int i = 0; i<a.length(); i++) {
@@ -24,33 +23,27 @@ class Solution {
             char currB = b.charAt(b.length()-1-i);
             
             if (currA == '0' && currB == '0' && !carry) {
-                System.out.println(1);
                 result = "0" + result;
                 carry = false;
             }
             else if ((currA == '0' && currB == '1' || currA == '1' && currB == '0')  && !carry) {
-                 System.out.println(2);
                 result = "1" + result;
                 carry = false;
             }
             else if(currA == '1' && currB == '1' && !carry) {
-                 System.out.println(3);
                 result = "0" + result;
                 carry = true;
             }
             
             else if(currA == '0' && currB == '0' && carry) {
-                 System.out.println(4);
                 result = "1" + result;
                 carry = false;
             }
             else if ((currA == '0' && currB == '1' || currA == '1' && currB == '0')  && carry) {
-                 System.out.println(5);
                 result = "0" + result;
                 carry = true;
             }
             else if (currA == '1' && currB == '1' && carry) {
-                 System.out.println(6);
                 result = "1" + result;
                 carry = true;
             }
