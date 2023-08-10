@@ -16,78 +16,43 @@ class Solution {
             }
         }
         
-        String result = "";
+        StringBuilder result = new StringBuilder();
         boolean carry = false;
         for (int i = 0; i<a.length(); i++) {
             char currA = a.charAt(a.length()-1-i);
             char currB = b.charAt(b.length()-1-i);
             
             if (currA == '0' && currB == '0' && !carry) {
-                result = "0" + result;
+                result.insert(0, "0");
                 carry = false;
             }
             else if ((currA == '0' && currB == '1' || currA == '1' && currB == '0')  && !carry) {
-                result = "1" + result;
+                 result.insert(0, "1");
                 carry = false;
             }
             else if(currA == '1' && currB == '1' && !carry) {
-                result = "0" + result;
+                 result.insert(0, "0");
                 carry = true;
             }
             
             else if(currA == '0' && currB == '0' && carry) {
-                result = "1" + result;
+                 result.insert(0, "1");
                 carry = false;
             }
             else if ((currA == '0' && currB == '1' || currA == '1' && currB == '0')  && carry) {
-                result = "0" + result;
+                 result.insert(0, "0");
                 carry = true;
             }
             else if (currA == '1' && currB == '1' && carry) {
-                result = "1" + result;
+                 result.insert(0, "1");
                 carry = true;
             }
         }
         if (carry) {
-            result = "1" + result;
+             result.insert(0, "1");
         }
-        
-        return result;
-        
-        
+        return result.toString();
+                
     }   
     
 }
-// 00000000 -> 0
-// 00000001 -> 1
-// 00000010 -> 2
-// 00000011 -> 3
-// 00000100 -> 4
-// 00000101 -> 5
-// 00000110 -> 6
-// 00000111 -> 7
-// 00001000 -> 8
-// 00001001 -> 9
-// 00001010 -> 10
-// 00001011 -> 11
-// 00001100 -> 12
-
-// 00000001 -> 1
-// 00000011 -> 3
-// 00000000
-// 00000000
-// 00000100
-
-
-//  11
-//  11
-//   0 1 + 1 = 1 0 carry = true
-//  1  1 + 1 + 1 = 11 carry = true
-// 110
-
-
-//  11
-//  11
-//   0 1 + 1 = 1 0 carry = true
-//  1  1 + 1 + 1 = 11 carry = true
-// 110
